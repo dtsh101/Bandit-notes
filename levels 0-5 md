@@ -1,0 +1,28 @@
+# Bandit levels 0 to 5
+
+## Level 0
+- Command: `ssh bandit0@bandit.labs.overthewire.org -p 2220`, then `ls` and `cat readme`
+- What I learned: How to log in over SSH using a port number, and how to use ls and cat to read a file and find the password.
+
+## Level 1
+- Command: `cat ./-`
+- What I learned: How to list files and read a file whose name is a dash, using ./ so the command doesn't treat it as an option.
+
+## Level 2
+- Command: `cat "./--spaces in this filename--"`
+- What I learned: Using ./ and quotation marks so the command treats a filename with spaces and special characters as one name.
+
+## Level 3
+- Command: `cd inhere`, `ls -la`, then `cat .hidden`
+- What I learned: ls -la shows hidden files, so I could find the hidden file and read the password.
+
+## Level 4
+- Command: `file ./*`, then `cat` on the file marked ASCII text
+- What I learned: The file command shows each file's type, so I could spot the one human-readable file among the rest.
+
+## Level 5
+- Command: first `ls -la`, then `find . -type f -size 1033c ! -executable`
+- What I learned: ls -la was slow for searching. find can filter by type, size and permissions in one command, which is much cleaner. Properties needed: human-readable, 1033 bytes, not executable.
+
+## Tomorrow's first step
+- Bandit level 6: read `man find`, then build a find command starting from `/` using `-user`, `-group` and `-size`, and add `2>/dev/null` to hide the errors.
