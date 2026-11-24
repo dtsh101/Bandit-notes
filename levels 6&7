@@ -1,0 +1,13 @@
+# Bandit levels 6 & 7
+
+## Level 6
+- Command: find / -user bandit7 -group6 -size 33c 2>/dev/null
+- What I learned: I learned the importance of searching the right location, initially I input find . rather than find / which searches the whole filesystem
+
+## Level 7
+- Command: grep "millionth" data.txt
+- What I learned: grep searches for a text within files as opposed to find which searches for properties
+
+## Tomorrow's first step
+- Bandit level 8: log in as bandit8, then use `sort` and `uniq` to find the one line in data.txt that appears only once.
+- After that: levels 9 and 10 (`strings`, `base64`), then write up the notes and commit.
